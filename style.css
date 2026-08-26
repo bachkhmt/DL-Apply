@@ -1,0 +1,349 @@
+/* ===================================================================
+   CO3133 — Deep Learning and Its Applications — Group Site
+   Design system: academic-technical. Paper background, deep indigo
+   accent, serif display + sans body + mono for data fields (course
+   codes, student IDs, repo paths) so identifiers read as data, not prose.
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #faf9f6;
+  --paper: #ffffff;
+  --ink: #15171c;
+  --ink-soft: #4b4f58;
+  --ink-faint: #8a8e99;
+  --accent: #2a4494;
+  --accent-dark: #1c2f6b;
+  --accent-soft: #e7ebfa;
+  --line: #dfe1e8;
+  --mono-bg: #f1f2f6;
+  --radius: 10px;
+  --max-w: 920px;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Top nav ---------- */
+.topnav {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topnav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.topnav .brand {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.topnav .brand strong { color: var(--ink); }
+.topnav nav a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-left: 20px;
+}
+.topnav nav a:hover, .topnav nav a:focus-visible { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 72px 0 40px;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+h1.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.08;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.institution {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 46ch;
+}
+.institution .line { display: block; }
+
+/* ---------- Node divider (signature element) ---------- */
+.node-divider {
+  width: 100%;
+  height: 34px;
+  margin: 40px 0 8px;
+  display: block;
+}
+.node-divider circle { fill: var(--accent); }
+.node-divider line { stroke: var(--line); stroke-width: 1.5; }
+.node-divider .pulse { fill: var(--accent-soft); }
+
+/* ---------- Sections ---------- */
+section { padding: 44px 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: none; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+}
+h2.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+/* ---------- Key/value data grid (course info) ---------- */
+.kv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.kv-item {
+  background: var(--paper);
+  padding: 18px 20px;
+}
+.kv-item dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+}
+.kv-item dd {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.kv-item dd.mono { font-family: var(--font-mono); font-size: 16px; }
+@media (max-width: 560px) { .kv-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Group meta ---------- */
+.group-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px dashed var(--line);
+}
+.group-meta .item dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px;
+}
+.group-meta .item dd {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ---------- Member table ---------- */
+.table-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+table.members {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+}
+table.members th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  background: var(--mono-bg);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+table.members td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  vertical-align: top;
+}
+table.members tr:last-child td { border-bottom: none; }
+table.members td.mono, table.members a {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+table.members a { color: var(--accent); text-decoration: none; }
+table.members a:hover { text-decoration: underline; }
+.placeholder { color: var(--ink-faint); font-style: italic; }
+
+/* ---------- Repo callout ---------- */
+.repo-callout {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--accent-soft);
+  border: 1px solid #c9d3f2;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.repo-callout .label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-dark);
+}
+.repo-callout a.button {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  padding: 9px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.repo-callout a.button:hover { background: var(--accent-dark); }
+
+/* ---------- Assignment cards ---------- */
+.assign-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 700px) { .assign-grid { grid-template-columns: 1fr; } }
+.assign-card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.assign-card:hover, .assign-card:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.assign-card .tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+.assign-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+.assign-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------- AI disclosure ---------- */
+.disclosure-box {
+  background: var(--mono-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+}
+.disclosure-box h4 {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin: 0 0 8px;
+}
+.disclosure-box h4:not(:first-child) { margin-top: 20px; }
+.disclosure-box p, .disclosure-box li { font-size: 15px; color: var(--ink); }
+.disclosure-box ul { margin: 8px 0 0; padding-left: 20px; }
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 40px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Assignment stub page ---------- */
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 28px 0 0;
+}
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.stub-note {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  background: var(--paper);
+}
