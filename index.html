@@ -11,7 +11,7 @@
 
 <header class="topnav">
   <div class="wrap">
-    <a class="brand" href="#top"><strong>CO3133</strong> · Group [XX]</a>
+    <a class="brand" href="#top"><strong>CO3133</strong> · Group 07 </a>
     <nav>
       <a href="#course">Course</a>
       <a href="#group">Group</a>
@@ -32,16 +32,38 @@
         <span class="line">Faculty of Computer Science and Engineering</span>
       </p>
 
-      <svg class="node-divider" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="10" y1="17" x2="890" y2="17"></line>
-        <circle class="pulse" cx="10" cy="17" r="8"></circle>
-        <circle cx="10" cy="17" r="3.5"></circle>
-        <circle cx="190" cy="17" r="3.5"></circle>
-        <circle cx="370" cy="17" r="3.5"></circle>
-        <circle cx="550" cy="17" r="3.5"></circle>
-        <circle cx="730" cy="17" r="3.5"></circle>
-        <circle class="pulse" cx="890" cy="17" r="8"></circle>
-        <circle cx="890" cy="17" r="3.5"></circle>
+      <svg class="node-divider" style="height: 92px;" viewBox="0 0 900 92" preserveAspectRatio="none" role="img" aria-label="Course milestones from September to December 2026">
+        <line x1="10" y1="16" x2="890" y2="16"></line>
+
+        <g class="milestone-node" transform="translate(10 16)">
+          <circle class="pulse" r="8"></circle><circle r="3.5"></circle>
+          <text y="34" text-anchor="start">09 Sep</text><text y="50" text-anchor="start">Pages skeleton</text>
+        </g>
+        <g class="milestone-node" transform="translate(120 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">23 Sep</text><text y="50" text-anchor="middle">A1 M1 Draft</text>
+        </g>
+        <g class="milestone-node" transform="translate(230 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">07 Oct</text><text y="50" text-anchor="middle">A2 M1 Proposal</text>
+        </g>
+        <g class="milestone-node" transform="translate(340 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">21 Oct</text><text y="50" text-anchor="middle">A1 M2 Final</text>
+        </g>
+        <g class="milestone-node" transform="translate(450 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">28 Oct</text><text y="50" text-anchor="middle">A2 M2 Draft</text>
+        </g>
+        <g class="milestone-node" transform="translate(560 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">11 Nov</text><text y="50" text-anchor="middle">A2 M3 Final</text>
+        </g>
+        <g class="milestone-node" transform="translate(670 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">18 Nov</text><text y="50" text-anchor="middle">A3 M1 Proposal</text>
+        </g>
+        <g class="milestone-node" transform="translate(780 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">25 Nov</text><text y="50" text-anchor="middle">A3 M2 Draft</text>
+        </g>
+        <g class="milestone-node" transform="translate(890 16)">
+          <circle class="pulse" r="8"></circle><circle r="3.5"></circle>
+          <text y="34" text-anchor="end">02 Dec</text><text y="50" text-anchor="end">A3 M3 Final</text>
+        </g>
       </svg>
     </section>
 
@@ -63,21 +85,14 @@
         </div>
         <div class="kv-item">
           <dt>Instructor</dt>
-          <dd>PhD. Lê Thành Sách</dd>
+          <dd>Dr. Lê Thành Sách</dd>
         </div>
       </dl>
     </section>
 
     <section id="group">
       <p class="section-label">02 — Group information</p>
-      <h2 class="section-title">Our group</h2>
-
-      <dl class="group-meta">
-        <div class="item">
-          <dt>Group name / ID</dt>
-          <dd>Group 07</dd>
-        </div>
-      </dl>
+      <h2 class="section-title">Group 07</h2>
 
       <div class="table-wrap">
         <table class="members">
@@ -93,19 +108,19 @@
             <tr>
               <td>Hoàng Xuân Bách</td>
               <td class="mono">2352082</td>
-              <td class="placeholder">[e.g. Model training, report writing]</td>
+              <td>hyperparameter tuning, report writing</td>
               <td><a href="https://github.com/bachkhmt" target="_blank" rel="noopener">bachkhmt</a></td>
             </tr>
             <tr>
               <td>Nguyễn Việt Hùng</td>
               <td class="mono">2352424</td>
-              <td class="placeholder">[e.g. Data pipeline, website]</td>
+              <td>Data collection, preprocessing, augmentation, dataloader</td>
               <td><a href="https://github.com/taro1026205" target="_blank" rel="noopener">taro1026205</a></td>
             </tr>
             <tr>
               <td>Lê Nguyễn Gia Phúc</td>
               <td class="mono">2352931</td>
-              <td class="placeholder">[e.g. Evaluation, slides]</td>
+              <td>Model architecture, training</td>
               <td><a href="https://github.com/shomin2155vn" target="_blank" rel="noopener">shomin2155vn</a></td>
             </tr>
             <!-- Add or remove <tr> rows to match your actual group size. -->
@@ -142,26 +157,19 @@
     </section>
 
     <section id="ai-disclosure">
-      <p class="section-label">04 — AI usage disclosure</p>
-      <h2 class="section-title">How we used AI in this course</h2>
+      <p class="section-label">04 — AI usage</p>
+      <h2 class="section-title">AI-assisted landing page skeleton</h2>
+
       <div class="disclosure-box">
-        <h4>Tools used</h4>
-        <ul>
-          <li class="placeholder">[e.g. ChatGPT / Claude — used for debugging assistance, drafting documentation, brainstorming architecture choices]</li>
-        </ul>
-        <h4>Where AI was used</h4>
-        <ul>
-          <li class="placeholder">[e.g. Assignment 2: generated boilerplate data-loading code, later reviewed and modified by the team]</li>
-          <li class="placeholder">[e.g. Website: layout and copy drafted with AI assistance, content verified by the group]</li>
-        </ul>
-        <h4>Where AI was NOT used</h4>
-        <ul>
-          <li class="placeholder">[e.g. Model design decisions, hyperparameter tuning, and final result analysis were done by the group members]</li>
-        </ul>
-        <h4>Verification statement</h4>
-        <p class="placeholder">[e.g. "All AI-assisted content was reviewed, tested, and understood by the group before submission. We take full responsibility for the correctness of the work."]</p>
+        <h4>How AI was used</h4>
+        <p>
+          AI tools were used only to assist in creating the initial landing page
+          skeleton, including basic HTML structure and layout suggestions.
+        </p>
+
         <p style="margin-top:14px; color: var(--ink-faint); font-size: 13px;">
-          See each assignment page for assignment-specific AI usage details.
+          All course assignments, technical implementations, experiments, and
+          analyses were completed by the group members.
         </p>
       </div>
     </section>
