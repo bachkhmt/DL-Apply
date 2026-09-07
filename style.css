@@ -143,6 +143,17 @@ h1.title {
   font-style: normal;
 }
 
+/* ---------- Node divider (signature element) ---------- */
+.node-divider {
+  width: 100%;
+  height: 34px;
+  margin: 24px 0 8px;
+  display: block;
+}
+.node-divider circle { fill: var(--accent); }
+.node-divider line { stroke: var(--line); stroke-width: 1.5; }
+.node-divider .pulse { fill: var(--accent-soft); }
+
 /* ---------- Real-Time Interactive Timeline (from indexnew.html) ---------- */
 .timeline-card {
   background: var(--paper);
@@ -408,7 +419,7 @@ table.members {
 table.members th {
   text-align: left;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--ink-faint);
@@ -419,13 +430,13 @@ table.members th {
 table.members td {
   padding: 14px 16px;
   border-bottom: 1px solid var(--line);
-  font-size: 15px;
+  font-size: 17px;
   vertical-align: top;
 }
 table.members tr:last-child td { border-bottom: none; }
 table.members td.mono, table.members a {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 17px;
 }
 table.members a { color: var(--accent); text-decoration: none; }
 table.members a:hover { text-decoration: underline; }
