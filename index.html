@@ -1,546 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CO3133 Deep Learning Group 07 | HCMUT — VNU-HCM</title>
-  <meta name="description" content="Course website for CO3133 Deep Learning and Its Applications at HCMUT — VNU-HCM, Group 07.">
-  <meta property="og:title" content="CO3133 Deep Learning Group 07 | HCMUT — VNU-HCM">
-  <meta property="og:description" content="Course website for CO3133 Deep Learning and Its Applications at HCMUT — VNU-HCM, Group 07.">
-  <meta property="og:type" content="website">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="/style.css">
-
-  <style>
-    /* Embedded core styling to guarantee zero FOUC and perfect rendering */
-    :root {
-      --bg: #faf9f6;
-      --paper: #ffffff;
-      --ink: #15171c;
-      --ink-soft: #4b4f58;
-      --ink-faint: #8a8e99;
-      --accent: #2a4494;
-      --accent-dark: #1c2f6b;
-      --accent-soft: #eef2fd;
-      --accent-active: #2563eb;
-      --line: #dfe1e8;
-      --radius: 12px;
-      --max-w: 1040px;
-      --font-display: 'Fraunces', 'Times New Roman', Times, Georgia, serif;
-      --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
-      --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrap {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-      width: 100%;
-    }
-
-    @keyframes pageFadeIn {
-      from {
-        opacity: 0.88;
-        transform: translateY(2px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    main {
-      animation: pageFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Top Navigation */
-    .topnav {
-      border-bottom: 1px solid var(--line);
-      background: var(--paper);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      flex-shrink: 0;
-      width: 100%;
-    }
-    .topnav .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 64px;
-    }
-    .topnav .brand {
-      font-size: 21px;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-      font-family: 'Times New Roman', Times, serif;
-      transition: color 0.15s ease;
-    }
-    .topnav .brand strong {
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .topnav .brand:hover {
-      color: var(--accent);
-    }
-    .topnav nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-    .topnav nav a {
-      font-family: 'Times New Roman', Times, serif;
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 19.5px;
-      font-weight: 600;
-      padding: 6px 0;
-      border-bottom: 2.5px solid transparent;
-      position: relative;
-      transition: color 0.15s ease, border-color 0.15s ease;
-    }
-    .topnav nav a:hover {
-      color: var(--accent);
-    }
-    .topnav nav a.active {
-      color: var(--accent);
-      font-weight: 700;
-      border-bottom: 2.5px solid var(--accent);
-    }
-
-    /* Homepage 1-Screen Layout & Even Vertical Distribution */
-    body.home {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
-    body.home main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 10px 0 14px;
-    }
-    body.home main > .wrap {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      gap: clamp(14px, 2.2vh, 24px);
-    }
-    @media (min-height: 740px) and (min-width: 768px) {
-      body.home {
-        height: 100vh;
-        overflow: hidden;
-      }
-    }
-
-    /* Hero Section (Balanced & evenly spaced) */
-    .hero {
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .hero .eyebrow {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 13.5px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 4px;
-      font-weight: 600;
-    }
-    .hero h1.title {
-      font-family: var(--font-display);
-      font-size: clamp(24px, 2.8vw, 36px);
-      font-weight: 700;
-      line-height: 1.18;
-      letter-spacing: -0.02em;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .hero .institution {
-      margin: 0;
-      font-family: var(--font-display);
-      color: var(--ink);
-      font-size: clamp(15px, 1.4vw, 18px);
-      line-height: 1.45;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      letter-spacing: -0.01em;
-    }
-    .hero .institution span:nth-of-type(1) {
-      font-family: var(--font-display);
-      font-weight: 600;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-    .hero .institution span:nth-of-type(2) {
-      font-family: var(--font-display);
-      color: var(--ink-soft);
-      font-weight: 500;
-      font-style: italic;
-      letter-spacing: -0.005em;
-    }
-    .hero .institution span + span::before {
-      content: "·";
-      margin-right: 10px;
-      color: var(--accent);
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    /* Real-Time Live Timeline Container (compact & balanced) */
-    .timeline-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px 16px 14px;
-      margin: 0;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
-    }
-
-    /* Live Status Bar */
-    .timeline-status-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed var(--line);
-    }
-    .live-indicator-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .live-beacon {
-      display: none !important;
-    }
-    .current-date-badge {
-      font-family: var(--font-mono);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .countdown-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-    }
-    .countdown-text {
-      color: var(--ink-soft);
-    }
-    .countdown-text strong {
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .progress-pill,
-    #progress-percent-display {
-      display: none !important;
-    }
-
-    /* Timeline Track */
-    .timeline-track-wrapper {
-      position: relative;
-      padding: 16px 12px 54px;
-      overflow-x: auto;
-    }
-    .timeline-track-inner {
-      position: relative;
-      min-width: 860px;
-      height: 50px;
-    }
-    .timeline-rail {
-      position: absolute;
-      top: 14px;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: #e5e7eb;
-      border-radius: 3px;
-    }
-    .timeline-progress-fill {
-      position: absolute;
-      top: 14px;
-      left: 0;
-      height: 6px;
-      background: linear-gradient(90deg, #1e3a8a, #2563eb);
-      border-radius: 3px;
-      width: 4.3%; /* default initialized, dynamically updated by JS */
-      transition: width 0.4s ease;
-      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
-    }
-
-    /* Today Needle / Pin */
-    .today-pin {
-      position: absolute;
-      top: 17px;
-      transform: translate(-50%, -50%);
-      left: 4.3%; /* default updated by JS */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 20;
-      transition: left 0.4s ease;
-      pointer-events: none;
-    }
-    .today-pin-badge {
-      display: none;
-    }
-    .today-pin-dot {
-      width: 14px;
-      height: 14px;
-      background: #ffffff;
-      border: 4px solid #2563eb;
-      border-radius: 50%;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
-    }
-
-    /* Milestone Nodes */
-    .milestone-node-item {
-      position: absolute;
-      top: 17px;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: default;
-      z-index: 10;
-    }
-    .milestone-dot {
-      width: 12px;
-      height: 12px;
-      background: var(--paper);
-      border: 2.5px solid #9ca3af;
-      border-radius: 50%;
-      transition: all 0.2s ease;
-    }
-    .milestone-node-item.is-past .milestone-dot {
-      background: #2563eb;
-      border-color: #1e3a8a;
-    }
-    .milestone-node-item.is-next .milestone-dot {
-      width: 15px;
-      height: 15px;
-      background: #ffffff;
-      border: 3.5px solid #dc2626;
-      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
-      animation: pulse-red 2s infinite;
-    }
-    @keyframes pulse-red {
-      0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
-      70% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
-    }
-
-    .milestone-label {
-      position: absolute;
-      top: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      white-space: normal;
-      pointer-events: none;
-      width: max-content;
-      max-width: 84px;
-    }
-    .milestone-date {
-      font-family: var(--font-mono);
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--ink);
-      white-space: nowrap;
-      line-height: 1.3;
-    }
-    .milestone-title {
-      font-size: 12px;
-      line-height: 1.35;
-      color: var(--ink-soft);
-      margin-top: 2px;
-      white-space: normal;
-      text-align: center;
-      word-break: normal;
-      overflow-wrap: break-word;
-      max-width: 84px;
-    }
-    .milestone-node-item.is-next .milestone-date {
-      color: #dc2626;
-      font-weight: 700;
-    }
-    .milestone-node-item.is-next .milestone-title {
-      color: #15171c;
-      font-weight: 600;
-    }
-    .milestone-node-item .next-tag,
-    .milestone-node-item.is-next .next-tag {
-      display: none !important;
-    }
-
-    /* 4-Card Navigation Grid (Balanced side-by-side & compact) */
-    .home-nav-section {
-      margin: 0;
-      width: 100%;
-    }
-    .home-nav-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      width: 100%;
-    }
-    .home-nav-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 174px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px 20px 16px;
-      text-decoration: none;
-      color: var(--ink);
-      background: var(--paper);
-      transition: all 0.2s ease;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-    }
-    .home-nav-card:hover, .home-nav-card:focus-visible {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(42, 68, 148, 0.1);
-    }
-    .card-top {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .home-nav-card .tag {
-      display: inline-block;
-      width: fit-content;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 3px 8px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin: 0;
-    }
-    .home-nav-card h3 {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.25;
-      margin: 2px 0 4px;
-      color: var(--ink);
-    }
-    .home-nav-card p {
-      margin: 0;
-      font-size: 14.5px;
-      line-height: 1.5;
-      color: var(--ink-soft);
-    }
-    .home-nav-card .arrow {
-      margin-top: 12px;
-      font-family: var(--font-mono);
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: transform 0.15s ease;
-    }
-    .home-nav-card:hover .arrow {
-      transform: translateX(4px);
-      color: var(--accent-dark);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: auto;
-      border-top: 1px solid var(--line);
-      background: var(--paper);
-      padding: 14px 0;
-      color: var(--ink-soft);
-      font-size: 15.5px;
-      font-family: 'Times New Roman', Times, serif;
-      flex-shrink: 0;
-      width: 100%;
-    }
-    footer .wrap span {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 15.5px;
-      letter-spacing: 0.01em;
-    }
-    footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 960px) {
-      .home-nav-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-    }
-    @media (max-width: 580px) {
-      .home-nav-grid {
-        grid-template-columns: 1fr;
-      }
-      .topnav .wrap {
-        height: auto;
-        padding: 12px 16px;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .timeline-status-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CO3133 — Deep Learning and Its Applications | Group Site</title>
+<meta name="description" content="Group landing page for CO3133 - Deep Learning and Its Applications, HCMUT.">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
+<body>
 
 <header class="topnav">
   <div class="wrap">
-    <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
+    <a class="brand" href="#top"><strong>CO3133</strong> · Group 07 </a>
     <nav>
-      <a href="course.html">Course</a>
-      <a href="group.html">Group</a>
-      <a href="assignments.html">Assignments</a>
-      <a href="ai-disclosure.html">AI Disclosure</a>
+      <a href="#course">Course</a>
+      <a href="#group">Group</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#ai-disclosure">AI Disclosure</a>
     </nav>
   </div>
 </header>
@@ -548,169 +24,153 @@
 <main id="top">
   <div class="wrap">
 
-    <!-- Hero Section -->
     <section class="hero">
       <p class="eyebrow">CO3133 · Semester 261</p>
       <h1 class="title">Deep Learning<br>and Its Applications</h1>
       <p class="institution">
-        <span>Ho Chi Minh City University of Technology — VNU-HCM</span>
-        <span>Faculty of Computer Science and Engineering</span>
+        <span class="line">Ho Chi Minh City University of Technology — VNU-HCM</span>
+        <span class="line">Faculty of Computer Science and Engineering</span>
       </p>
+
+      <svg class="node-divider" style="height: 92px;" viewBox="0 0 900 92" preserveAspectRatio="none" role="img" aria-label="Course milestones from September to December 2026">
+        <line x1="10" y1="16" x2="890" y2="16"></line>
+
+        <g class="milestone-node" transform="translate(10 16)">
+          <circle class="pulse" r="8"></circle><circle r="3.5"></circle>
+          <text y="34" text-anchor="start">09 Sep</text><text y="50" text-anchor="start">Pages skeleton</text>
+        </g>
+        <g class="milestone-node" transform="translate(120 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">23 Sep</text><text y="50" text-anchor="middle">A1 M1 Draft</text>
+        </g>
+        <g class="milestone-node" transform="translate(230 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">07 Oct</text><text y="50" text-anchor="middle">A2 M1 Proposal</text>
+        </g>
+        <g class="milestone-node" transform="translate(340 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">21 Oct</text><text y="50" text-anchor="middle">A1 M2 Final</text>
+        </g>
+        <g class="milestone-node" transform="translate(450 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">28 Oct</text><text y="50" text-anchor="middle">A2 M2 Draft</text>
+        </g>
+        <g class="milestone-node" transform="translate(560 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">11 Nov</text><text y="50" text-anchor="middle">A2 M3 Final</text>
+        </g>
+        <g class="milestone-node" transform="translate(670 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">18 Nov</text><text y="50" text-anchor="middle">A3 M1 Proposal</text>
+        </g>
+        <g class="milestone-node" transform="translate(780 16)">
+          <circle r="3.5"></circle><text y="34" text-anchor="middle">25 Nov</text><text y="50" text-anchor="middle">A3 M2 Draft</text>
+        </g>
+        <g class="milestone-node" transform="translate(890 16)">
+          <circle class="pulse" r="8"></circle><circle r="3.5"></circle>
+          <text y="34" text-anchor="end">02 Dec</text><text y="50" text-anchor="end">A3 M3 Final</text>
+        </g>
+      </svg>
     </section>
 
-    <!-- Real-Time Interactive Timeline Card -->
-    <section class="timeline-card" aria-label="Course Schedule & Real-Time Milestones">
-      <!-- Live Status & Countdown Header -->
-      <div class="timeline-status-bar">
-        <div class="live-indicator-group">
-          <span class="current-date-badge" id="current-date-display">Today: 05 Sep 2026</span>
+    <section id="course">
+      <p class="section-label">01 — Course information</p>
+      <h2 class="section-title">Course details</h2>
+      <dl class="kv-grid">
+        <div class="kv-item">
+          <dt>Course name</dt>
+          <dd>Deep Learning and Its Applications</dd>
         </div>
+        <div class="kv-item">
+          <dt>Course code</dt>
+          <dd class="mono">CO3133</dd>
+        </div>
+        <div class="kv-item">
+          <dt>Semester</dt>
+          <dd class="mono">261</dd>
+        </div>
+        <div class="kv-item">
+          <dt>Instructor</dt>
+          <dd>Dr. Lê Thành Sách</dd>
+        </div>
+      </dl>
+    </section>
 
-        <div class="countdown-group">
-          <span class="countdown-text" id="next-milestone-display">
-            Upcoming: <strong>09 Sep — Pages skeleton</strong> (in 4 days)
-          </span>
-        </div>
+    <section id="group">
+      <p class="section-label">02 — Group information</p>
+      <h2 class="section-title">Group 07</h2>
+
+      <div class="table-wrap">
+        <table class="members">
+          <thead>
+            <tr>
+              <th>Full name</th>
+              <th>Student ID</th>
+              <th>Main role / contribution</th>
+              <th>GitHub profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hoàng Xuân Bách</td>
+              <td class="mono">2352082</td>
+              <td>hyperparameter tuning, report writing</td>
+              <td><a href="https://github.com/bachkhmt" target="_blank" rel="noopener">bachkhmt</a></td>
+            </tr>
+            <tr>
+              <td>Nguyễn Việt Hùng</td>
+              <td class="mono">2352424</td>
+              <td>Data collection, preprocessing, augmentation, dataloader</td>
+              <td><a href="https://github.com/taro1026205" target="_blank" rel="noopener">taro1026205</a></td>
+            </tr>
+            <tr>
+              <td>Lê Nguyễn Gia Phúc</td>
+              <td class="mono">2352931</td>
+              <td>Model architecture, training</td>
+              <td><a href="https://github.com/shomin2155vn" target="_blank" rel="noopener">shomin2155vn</a></td>
+            </tr>
+            <!-- Add or remove <tr> rows to match your actual group size. -->
+          </tbody>
+        </table>
       </div>
 
-      <!-- Timeline Rail & Nodes -->
-      <div class="timeline-track-wrapper">
-        <div class="timeline-track-inner" id="timeline-track">
-          <!-- Background rail -->
-          <div class="timeline-rail"></div>
-
-          <!-- Dynamic progress bar fill up to today -->
-          <div class="timeline-progress-fill" id="timeline-progress-fill" style="width: 4.3%;"></div>
-
-          <!-- Dynamic Today Marker Pin -->
-          <div class="today-pin" id="today-marker-pin" style="left: 4.3%;">
-            <div class="today-pin-badge" id="today-marker-label">Today (05 Sep)</div>
-            <div class="today-pin-dot"></div>
-          </div>
-
-          <!-- 9 Proportional Milestone Nodes -->
-          <!-- 1. 09 Sep: Day 8 (8.7%) -->
-          <div class="milestone-node-item is-next" id="node-1" style="left: 8.7%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">09 Sep</span>
-              <span class="milestone-title">Pages<br>skeleton</span>
-            </div>
-          </div>
-
-          <!-- 2. 23 Sep: Day 22 (23.9%) -->
-          <div class="milestone-node-item" id="node-2" style="left: 23.9%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">23 Sep</span>
-              <span class="milestone-title">A1 M1<br>Draft</span>
-            </div>
-          </div>
-
-          <!-- 3. 07 Oct: Day 36 (39.1%) -->
-          <div class="milestone-node-item" id="node-3" style="left: 39.1%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">07 Oct</span>
-              <span class="milestone-title">A2 M1<br>Proposal</span>
-            </div>
-          </div>
-
-          <!-- 4. 21 Oct: Day 50 (54.3%) -->
-          <div class="milestone-node-item" id="node-4" style="left: 54.3%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">21 Oct</span>
-              <span class="milestone-title">A1 M2<br>Final</span>
-            </div>
-          </div>
-
-          <!-- 5. 28 Oct: Day 57 (62.0%) -->
-          <div class="milestone-node-item" id="node-5" style="left: 62.0%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">28 Oct</span>
-              <span class="milestone-title">A2 M2<br>Draft</span>
-            </div>
-          </div>
-
-          <!-- 6. 11 Nov: Day 71 (77.2%) -->
-          <div class="milestone-node-item" id="node-6" style="left: 77.2%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">11 Nov</span>
-              <span class="milestone-title">A2 M3<br>Final</span>
-            </div>
-          </div>
-
-          <!-- 7. 18 Nov: Day 78 (84.8%) -->
-          <div class="milestone-node-item" id="node-7" style="left: 84.8%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">18 Nov</span>
-              <span class="milestone-title">A3 M1<br>Proposal</span>
-            </div>
-          </div>
-
-          <!-- 8. 25 Nov: Day 85 (92.4%) -->
-          <div class="milestone-node-item" id="node-8" style="left: 92.4%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label">
-              <span class="milestone-date">25 Nov</span>
-              <span class="milestone-title">A3 M2<br>Draft</span>
-            </div>
-          </div>
-
-          <!-- 9. 02 Dec: Day 92 (100.0%) -->
-          <div class="milestone-node-item" id="node-9" style="left: 100%;">
-            <div class="milestone-dot"></div>
-            <div class="milestone-label" style="transform: translateX(-16px);">
-              <span class="milestone-date">02 Dec</span>
-              <span class="milestone-title">A3 M3<br>Final</span>
-            </div>
-          </div>
-        </div>
+      <div class="repo-callout">
+        <span class="label">Group code repository</span>
+        <a class="button" href="#" id="repo-link">[Replace with your GitHub repo URL]</a>
       </div>
     </section>
 
-    <!-- Balanced 4-Card Navigation Grid -->
-    <section class="home-nav-section" aria-label="Section Navigation">
-      <div class="home-nav-grid">
-        <a class="home-nav-card" href="course.html" id="nav-card-course">
-          <div class="card-top">
-            <span class="tag">01 — Course</span>
-            <h3>Course Details</h3>
-            <p>Syllabus, schedule milestones, instructor, and academic logistics.</p>
-          </div>
-          <span class="arrow">Explore course &rarr;</span>
+    <section id="assignments">
+      <p class="section-label">03 — Assignment index</p>
+      <h2 class="section-title">Assignments</h2>
+      <div class="assign-grid">
+        <a class="assign-card" href="assignment1.html">
+          <p class="tag">Assignment 1</p>
+          <h3>[Assignment 1 title]</h3>
+          <p>Problem statement, method, and results.</p>
         </a>
+        <a class="assign-card" href="assignment2.html">
+          <p class="tag">Assignment 2</p>
+          <h3>[Assignment 2 title]</h3>
+          <p>Problem statement, method, and results.</p>
+        </a>
+        <a class="assign-card" href="assignment3.html">
+          <p class="tag">Assignment 3</p>
+          <h3>[Assignment 3 title]</h3>
+          <p>Problem statement, method, and results.</p>
+        </a>
+      </div>
+    </section>
 
-        <a class="home-nav-card" href="group.html" id="nav-card-group">
-          <div class="card-top">
-            <span class="tag">02 — Group</span>
-            <h3>Group 07</h3>
-            <p>Member roster, student IDs, responsibilities, and GitHub repository.</p>
-          </div>
-          <span class="arrow">Meet the team &rarr;</span>
-        </a>
+    <section id="ai-disclosure">
+      <p class="section-label">04 — AI usage</p>
+      <h2 class="section-title">AI-assisted landing page skeleton</h2>
 
-        <a class="home-nav-card" href="assignments.html" id="nav-card-assignments">
-          <div class="card-top">
-            <span class="tag">03 — Assignments</span>
-            <h3>Assignments</h3>
-            <p>Reports, problem formulations, experimental methods, and findings.</p>
-          </div>
-          <span class="arrow">View assignments &rarr;</span>
-        </a>
+      <div class="disclosure-box">
+        <h4>How AI was used</h4>
+        <p>
+          AI tools were used only to assist in creating the initial landing page
+          skeleton, including basic HTML structure and layout suggestions.
+        </p>
 
-        <a class="home-nav-card" href="ai-disclosure.html" id="nav-card-disclosure">
-          <div class="card-top">
-            <span class="tag">04 — AI Disclosure</span>
-            <h3>AI Usage</h3>
-            <p>Transparent academic integrity statements and AI assistance record.</p>
-          </div>
-          <span class="arrow">Read disclosure &rarr;</span>
-        </a>
+        <p style="margin-top:14px; color: var(--ink-faint); font-size: 13px;">
+          All course assignments, technical implementations, experiments, and
+          analyses were completed by the group members.
+        </p>
       </div>
     </section>
 
@@ -718,103 +178,11 @@
 </main>
 
 <footer>
-  <div class="wrap">
-    <span>Group 07 · CO3133 · Semester 261</span>
-    <span>Ho Chi Minh City University of Technology — VNU-HCM</span>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+    <span class="placeholder">Group [XX] · CO3133 · Semester 261</span>
+    <span>HCMUT — VNU-HCM</span>
   </div>
 </footer>
-
-<!-- Lightweight Real-Time Tracking Script -->
-<script>
-  (function() {
-    // Semester schedule parameters
-    const semesterStart = new Date('2026-09-01T00:00:00');
-    const semesterEnd = new Date('2026-12-02T23:59:59');
-
-    const milestones = [
-      { id: 'node-1', date: new Date('2026-09-09T23:59:59'), label: '09 Sep', title: 'Pages skeleton' },
-      { id: 'node-2', date: new Date('2026-09-23T23:59:59'), label: '23 Sep', title: 'A1 M1 Draft' },
-      { id: 'node-3', date: new Date('2026-10-07T23:59:59'), label: '07 Oct', title: 'A2 M1 Proposal' },
-      { id: 'node-4', date: new Date('2026-10-21T23:59:59'), label: '21 Oct', title: 'A1 M2 Final' },
-      { id: 'node-5', date: new Date('2026-10-28T23:59:59'), label: '28 Oct', title: 'A2 M2 Draft' },
-      { id: 'node-6', date: new Date('2026-11-11T23:59:59'), label: '11 Nov', title: 'A2 M3 Final' },
-      { id: 'node-7', date: new Date('2026-11-18T23:59:59'), label: '18 Nov', title: 'A3 M1 Proposal' },
-      { id: 'node-8', date: new Date('2026-11-25T23:59:59'), label: '25 Nov', title: 'A3 M2 Draft' },
-      { id: 'node-9', date: new Date('2026-12-02T23:59:59'), label: '02 Dec', title: 'A3 M3 Final' }
-    ];
-
-    function updateTimeline() {
-      // Get current date
-      let now = new Date();
-      // If local date is outside 2026 semester range, gracefully anchor to 2026-09-05 for accurate course demo
-      if (now < semesterStart || now > semesterEnd) {
-        now = new Date('2026-09-05T10:43:00');
-      }
-
-      // Format date
-      const options = { day: '2-digit', month: 'short', year: 'numeric' };
-      const dateStr = now.toLocaleDateString('en-GB', options);
-      const shortStr = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
-
-      // Update date badges
-      const dateDisplay = document.getElementById('current-date-display');
-      if (dateDisplay) dateDisplay.textContent = 'Today: ' + dateStr;
-
-      const markerLabel = document.getElementById('today-marker-label');
-      if (markerLabel) markerLabel.textContent = 'Today (' + shortStr + ')';
-
-      // Compute progress percentage
-      const totalDuration = semesterEnd.getTime() - semesterStart.getTime();
-      const elapsed = Math.max(0, Math.min(totalDuration, now.getTime() - semesterStart.getTime()));
-      const pct = (elapsed / totalDuration) * 100;
-      const pctFormatted = Math.max(1, Math.min(100, pct)).toFixed(1);
-
-      const progressFill = document.getElementById('timeline-progress-fill');
-      if (progressFill) progressFill.style.width = pctFormatted + '%';
-
-      const todayPin = document.getElementById('today-marker-pin');
-      if (todayPin) todayPin.style.left = pctFormatted + '%';
-
-      const progressDisplay = document.getElementById('progress-percent-display');
-      if (progressDisplay) progressDisplay.textContent = pctFormatted + '% elapsed';
-
-      // Determine past and next upcoming milestones
-      let nextMilestone = null;
-      let nextDays = 0;
-
-      milestones.forEach((m) => {
-        const nodeEl = document.getElementById(m.id);
-        if (!nodeEl) return;
-
-        nodeEl.classList.remove('is-past', 'is-next');
-
-        if (now > m.date) {
-          nodeEl.classList.add('is-past');
-        } else if (!nextMilestone && now <= m.date) {
-          nextMilestone = m;
-          nodeEl.classList.add('is-next');
-          const diffMs = m.date.getTime() - now.getTime();
-          nextDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-        }
-      });
-
-      const nextDisplay = document.getElementById('next-milestone-display');
-      if (nextDisplay && nextMilestone) {
-        const daysText = nextDays === 1 ? 'tomorrow' : nextDays === 0 ? 'today' : 'in ' + nextDays + ' days';
-        nextDisplay.innerHTML = 'Upcoming: <strong>' + nextMilestone.label + ' — ' + nextMilestone.title + '</strong> (' + daysText + ')';
-      } else if (nextDisplay && !nextMilestone) {
-        nextDisplay.innerHTML = 'Status: <strong>All semester milestones concluded</strong>';
-      }
-    }
-
-    // Run on load
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', updateTimeline);
-    } else {
-      updateTimeline();
-    }
-  })();
-</script>
 
 </body>
 </html>
