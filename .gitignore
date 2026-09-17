@@ -1,0 +1,20 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+handbook-ene-v2 (1).pdf
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Dataset & model checkpoints
+data/
+checkpoints/
+*.pt
+*.pth
+*.pkl
