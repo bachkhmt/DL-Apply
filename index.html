@@ -32,39 +32,96 @@
         <span class="line">Faculty of Computer Science and Engineering</span>
       </p>
 
-      <svg class="node-divider" style="height: 92px;" viewBox="0 0 900 92" preserveAspectRatio="none" role="img" aria-label="Course milestones from September to December 2026">
-        <line x1="10" y1="16" x2="890" y2="16"></line>
+    </section>
 
-        <g class="milestone-node" transform="translate(10 16)">
-          <circle class="pulse" r="8"></circle><circle r="3.5"></circle>
-          <text y="34" text-anchor="start">09 Sep</text><text y="50" text-anchor="start">Pages skeleton</text>
-        </g>
-        <g class="milestone-node" transform="translate(120 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">23 Sep</text><text y="50" text-anchor="middle">A1 M1 Draft</text>
-        </g>
-        <g class="milestone-node" transform="translate(230 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">07 Oct</text><text y="50" text-anchor="middle">A2 M1 Proposal</text>
-        </g>
-        <g class="milestone-node" transform="translate(340 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">21 Oct</text><text y="50" text-anchor="middle">A1 M2 Final</text>
-        </g>
-        <g class="milestone-node" transform="translate(450 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">28 Oct</text><text y="50" text-anchor="middle">A2 M2 Draft</text>
-        </g>
-        <g class="milestone-node" transform="translate(560 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">11 Nov</text><text y="50" text-anchor="middle">A2 M3 Final</text>
-        </g>
-        <g class="milestone-node" transform="translate(670 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">18 Nov</text><text y="50" text-anchor="middle">A3 M1 Proposal</text>
-        </g>
-        <g class="milestone-node" transform="translate(780 16)">
-          <circle r="3.5"></circle><text y="34" text-anchor="middle">25 Nov</text><text y="50" text-anchor="middle">A3 M2 Draft</text>
-        </g>
-        <g class="milestone-node" transform="translate(890 16)">
-          <circle class="pulse" r="8"></circle><circle r="3.5"></circle>
-          <text y="34" text-anchor="end">02 Dec</text><text y="50" text-anchor="end">A3 M3 Final</text>
-        </g>
-      </svg>
+    <!-- Real-Time Interactive Timeline Card -->
+    <section class="timeline-card" aria-label="Course Schedule &amp; Real-Time Milestones">
+      <div class="timeline-status-bar">
+        <div class="live-indicator-group">
+          <span class="current-date-badge" id="current-date-display">Today: 05 Sep 2026</span>
+        </div>
+        <div class="countdown-group">
+          <span class="countdown-text" id="next-milestone-display">
+            Upcoming: <strong>09 Sep — Pages skeleton</strong> (in 4 days)
+          </span>
+        </div>
+      </div>
+
+      <div class="timeline-track-wrapper">
+        <div class="timeline-track-inner" id="timeline-track">
+          <div class="timeline-rail"></div>
+          <div class="timeline-progress-fill" id="timeline-progress-fill" style="width: 4.3%;"></div>
+
+          <div class="today-pin" id="today-marker-pin" style="left: 4.3%;">
+            <div class="today-pin-badge" id="today-marker-label">Today (05 Sep)</div>
+            <div class="today-pin-dot"></div>
+          </div>
+
+          <div class="milestone-node-item is-next" id="node-1" style="left: 8.7%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">09 Sep</span>
+              <span class="milestone-title">Pages<br>skeleton</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-2" style="left: 23.9%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">23 Sep</span>
+              <span class="milestone-title">A1 M1<br>Draft</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-3" style="left: 39.1%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">07 Oct</span>
+              <span class="milestone-title">A2 M1<br>Proposal</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-4" style="left: 54.3%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">21 Oct</span>
+              <span class="milestone-title">A1 M2<br>Final</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-5" style="left: 62.0%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">28 Oct</span>
+              <span class="milestone-title">A2 M2<br>Draft</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-6" style="left: 77.2%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">11 Nov</span>
+              <span class="milestone-title">A2 M3<br>Final</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-7" style="left: 84.8%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">18 Nov</span>
+              <span class="milestone-title">A3 M1<br>Proposal</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-8" style="left: 92.4%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label">
+              <span class="milestone-date">25 Nov</span>
+              <span class="milestone-title">A3 M2<br>Draft</span>
+            </div>
+          </div>
+          <div class="milestone-node-item" id="node-9" style="left: 100%;">
+            <div class="milestone-dot"></div>
+            <div class="milestone-label" style="transform: translateX(-16px);">
+              <span class="milestone-date">02 Dec</span>
+              <span class="milestone-title">A3 M3<br>Final</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="course">
@@ -108,7 +165,7 @@
             <tr>
               <td>Hoàng Xuân Bách</td>
               <td class="mono">2352082</td>
-              <td>hyperparameter tuning, report writing</td>
+              <td>Hyperparameter tuning, report writing</td>
               <td><a href="https://github.com/bachkhmt" target="_blank" rel="noopener">bachkhmt</a></td>
             </tr>
             <tr>
@@ -130,7 +187,7 @@
 
       <div class="repo-callout">
         <span class="label">Group code repository</span>
-        <a class="button" href="#" id="repo-link">[Replace with your GitHub repo URL]</a>
+        <a class="button" href="https://github.com/bachkhmt/DL-Apply" target="_blank" rel="noopener" id="repo-link">github.com/bachkhmt/DL-Apply</a>
       </div>
     </section>
 
@@ -140,17 +197,17 @@
       <div class="assign-grid">
         <a class="assign-card" href="assignment1.html">
           <p class="tag">Assignment 1</p>
-          <h3>[Assignment 1 title]</h3>
+          <h3>Foundations of Deep Learning Pipelines and Architectures</h3>
           <p>Problem statement, method, and results.</p>
         </a>
         <a class="assign-card" href="assignment2.html">
           <p class="tag">Assignment 2</p>
-          <h3>[Assignment 2 title]</h3>
+          <h3>Deep Learning on Large-Scale Data and Specialized Tasks</h3>
           <p>Problem statement, method, and results.</p>
         </a>
         <a class="assign-card" href="assignment3.html">
           <p class="tag">Assignment 3</p>
-          <h3>[Assignment 3 title]</h3>
+          <h3>Multimodal Deep Learning</h3>
           <p>Problem statement, method, and results.</p>
         </a>
       </div>
@@ -179,10 +236,90 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span class="placeholder">Group [XX] · CO3133 · Semester 261</span>
+    <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
     <span>HCMUT — VNU-HCM</span>
   </div>
 </footer>
+
+<script>
+  (function() {
+    const semesterStart = new Date('2026-09-01T00:00:00');
+    const semesterEnd = new Date('2026-12-02T23:59:59');
+
+    const milestones = [
+      { id: 'node-1', date: new Date('2026-09-09T23:59:59'), label: '09 Sep', title: 'Pages skeleton' },
+      { id: 'node-2', date: new Date('2026-09-23T23:59:59'), label: '23 Sep', title: 'A1 M1 Draft' },
+      { id: 'node-3', date: new Date('2026-10-07T23:59:59'), label: '07 Oct', title: 'A2 M1 Proposal' },
+      { id: 'node-4', date: new Date('2026-10-21T23:59:59'), label: '21 Oct', title: 'A1 M2 Final' },
+      { id: 'node-5', date: new Date('2026-10-28T23:59:59'), label: '28 Oct', title: 'A2 M2 Draft' },
+      { id: 'node-6', date: new Date('2026-11-11T23:59:59'), label: '11 Nov', title: 'A2 M3 Final' },
+      { id: 'node-7', date: new Date('2026-11-18T23:59:59'), label: '18 Nov', title: 'A3 M1 Proposal' },
+      { id: 'node-8', date: new Date('2026-11-25T23:59:59'), label: '25 Nov', title: 'A3 M2 Draft' },
+      { id: 'node-9', date: new Date('2026-12-02T23:59:59'), label: '02 Dec', title: 'A3 M3 Final' }
+    ];
+
+    function updateTimeline() {
+      let now = new Date();
+      if (now < semesterStart || now > semesterEnd) {
+        now = new Date('2026-09-05T10:43:00');
+      }
+
+      const options = { day: '2-digit', month: 'short', year: 'numeric' };
+      const dateStr = now.toLocaleDateString('en-GB', options);
+      const shortStr = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+
+      const dateDisplay = document.getElementById('current-date-display');
+      if (dateDisplay) dateDisplay.textContent = 'Today: ' + dateStr;
+
+      const markerLabel = document.getElementById('today-marker-label');
+      if (markerLabel) markerLabel.textContent = 'Today (' + shortStr + ')';
+
+      const totalDuration = semesterEnd.getTime() - semesterStart.getTime();
+      const elapsed = Math.max(0, Math.min(totalDuration, now.getTime() - semesterStart.getTime()));
+      const pct = (elapsed / totalDuration) * 100;
+      const pctFormatted = Math.max(1, Math.min(100, pct)).toFixed(1);
+
+      const progressFill = document.getElementById('timeline-progress-fill');
+      if (progressFill) progressFill.style.width = pctFormatted + '%';
+
+      const todayPin = document.getElementById('today-marker-pin');
+      if (todayPin) todayPin.style.left = pctFormatted + '%';
+
+      let nextMilestone = null;
+      let nextDays = 0;
+
+      milestones.forEach((m) => {
+        const nodeEl = document.getElementById(m.id);
+        if (!nodeEl) return;
+
+        nodeEl.classList.remove('is-past', 'is-next');
+
+        if (now > m.date) {
+          nodeEl.classList.add('is-past');
+        } else if (!nextMilestone && now <= m.date) {
+          nextMilestone = m;
+          nodeEl.classList.add('is-next');
+          const diffMs = m.date.getTime() - now.getTime();
+          nextDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+        }
+      });
+
+      const nextDisplay = document.getElementById('next-milestone-display');
+      if (nextDisplay && nextMilestone) {
+        const daysText = nextDays === 1 ? 'tomorrow' : nextDays === 0 ? 'today' : 'in ' + nextDays + ' days';
+        nextDisplay.innerHTML = 'Upcoming: <strong>' + nextMilestone.label + ' — ' + nextMilestone.title + '</strong> (' + daysText + ')';
+      } else if (nextDisplay && !nextMilestone) {
+        nextDisplay.innerHTML = 'Status: <strong>All semester milestones concluded</strong>';
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateTimeline);
+    } else {
+      updateTimeline();
+    }
+  })();
+</script>
 
 </body>
 </html>
